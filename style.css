@@ -70,7 +70,7 @@ header {
 }
 
 /* All you have to do to fix the nav is make use of flexbox and justify-content */
-header nav ul { 
+header nav ul {
   display: flex;
   justify-content: center;
 }
@@ -92,6 +92,7 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
+  display: flex;
   border: 2px solid #ff385c;
   padding: 10px;
 }
@@ -100,9 +101,47 @@ form label {
   font-weight: bold;
 }
 
-form select,
-form input {
+.location {
+  display: flex;
+  justify-content: center;
+}
+
+.location input {
   margin-bottom: 20px;
+  margin-left: 33px;
+  width: 180px;
+}
+
+.arrive {
+  display: flex;
+  justify-content: center;
+}
+
+.arrive input {
+  margin-bottom: 20px;
+  margin-left: 50px;
+  width: 180px;
+}
+
+.depart {
+  display: flex;
+  justify-content: center;
+}
+
+.depart input {
+  margin-bottom: 20px;
+  margin-left: 45px;
+  width: 180px;
+}
+
+.type {
+  display: flex;
+  justify-content: center;
+}
+
+.type select {
+  margin-bottom: 20px;
+  margin-left: 66px;
   width: 180px;
 }
 
@@ -115,26 +154,6 @@ form button {
   width: 100%;
 }
 
-#search-form {
-  display: flex;
-  justify-content: center;
-}
-
-#search-form #location {
-  margin-left: 80px;
-}
-
-#search-form #arrive {
-  margin-left: 99px;
-}
-
-#search-form #depart {
-  margin-left: 93px;
-}
-#search-form #type {
-  margin-left: 115px;
-}
-
 /* -------  About ------- */
 
 .about-images {
@@ -144,11 +163,11 @@ form button {
 }
 
 .pool {
-  margin: 30px;
+  margin: 0px 15px 5px 15px;
 }
 
 .stone-interior {
-  margin: 30px;
+  margin: 5px 15px 15px 15px;
 }
 
 /* -------  Footer ------- */
@@ -165,9 +184,23 @@ footer p {
 
 /* -------  Media Query ------- */
 
-p {
-  font-size: 14px;}
-  @media all and (min-width: 480px) {
-  p {
-  font-size: 24px;}}
-  
+@media all and (min-width: 480px) {
+  form {
+    justify-content: center;
+  }
+  fieldset {
+    width: 100%
+  }
+  .location {
+    justify-content: space-evenly;
+  }
+  .arrive {
+    justify-content: space-evenly;
+  }
+  .depart {
+    justify-content: space-evenly;
+  }
+  .type {
+    justify-content: space-evenly;
+  }
+}
