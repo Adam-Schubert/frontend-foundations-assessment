@@ -17,6 +17,7 @@ h3 {
 }
 
 p {
+  font-size: 14px;
   line-height: 1.5em;
   margin: 0;
 }
@@ -27,16 +28,17 @@ section {
 
 section.alternate-background {
   background-color: #00a699;
-  color: #fff;
-}
-
-/* Fieldset comes with an auto border that you need to remove */
-fieldset {
-  border: 0;
+  color: #fff;  
+  padding: 20px;
 }
 
 main img {
-  width: 100%; /* Changing the width from 100px to 100% makes the images align properly*/
+  width: 96%;
+  margin: 20px 5%
+}
+
+ul{
+  margin: 5px 10%;
 }
 
 /* ---  Groups & Items --- */
@@ -59,20 +61,23 @@ main img {
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
-  text-align: center;
+  padding: 20px 20px 0px 20px;
+  text-align: center;  
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 60px;
   color: #fff;
 }
 
-/* All you have to do to fix the nav is make use of flexbox and justify-content */
-header nav ul {
+header nav {
   display: flex;
   justify-content: center;
+}
+
+header nav ul {
+  display: flex;
 }
 
 header nav ul li {
@@ -80,9 +85,12 @@ header nav ul li {
 }
 
 header nav ul li a {
+  flex-wrap: nowrap;
+  display: flex;
+  justify-content: center;
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  padding: 0px 20px 0px 0px;  
 }
 
 header nav ul li a:hover {
@@ -92,7 +100,6 @@ header nav ul li a:hover {
 
 /* -------  Search Form ------- */
 form {
-  display: flex;
   border: 2px solid #ff385c;
   padding: 10px;
 }
@@ -101,49 +108,18 @@ form label {
   font-weight: bold;
 }
 
-.location {
+form div {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.location input {
+form select,
+form input {
   margin-bottom: 20px;
-  margin-left: 33px;
   width: 180px;
-}
-
-.arrive {
-  display: flex;
-  justify-content: center;
-}
-
-.arrive input {
-  margin-bottom: 20px;
-  margin-left: 50px;
-  width: 180px;
-}
-
-.depart {
-  display: flex;
-  justify-content: center;
-}
-
-.depart input {
-  margin-bottom: 20px;
-  margin-left: 45px;
-  width: 180px;
-}
-
-.type {
-  display: flex;
-  justify-content: center;
-}
-
-.type select {
-  margin-bottom: 20px;
-  margin-left: 66px;
-  width: 180px;
-}
+ }
 
 form button {
   background-color: #ff385c;
@@ -152,22 +128,6 @@ form button {
   font-size: 24px;
   padding: 15px;
   width: 100%;
-}
-
-/* -------  About ------- */
-
-.about-images {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.pool {
-  margin: 0px 15px 5px 15px;
-}
-
-.stone-interior {
-  margin: 5px 15px 15px 15px;
 }
 
 /* -------  Footer ------- */
@@ -185,22 +145,83 @@ footer p {
 /* -------  Media Query ------- */
 
 @media all and (min-width: 480px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .logo {
+    margin: 14px 0 14px 20px;
+    padding-top: 0;
+    font-size: 42px;
+  }
+
+  nav {
+    padding-top: 30px;
+  }
+
+  .group {
+    flex-direction: row;
+    align-items: center;
+  }
+
   form {
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  fieldset {
-    width: 100%
+
+  form div {
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-  .location {
+
+  .desktop-about{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
+    font-size: 1.0rem;
+    margin: 1rem 1rem;
   }
-  .arrive {
-    justify-content: space-evenly;
+
+  .desktop-about img  {
+    flex: 1;
+    width: 25%;
+    margin: 2% 1%;
   }
-  .depart {
-    justify-content: space-evenly;
+
+  .desktop-about p {
+    flex: 2;
   }
-  .type {
-    justify-content: space-evenly;
+
+  h2{
+    margin: 0 10px 10px auto;
+  } 
+
+  img #ideas {
+    width: 50%;
   }
+
+  .group-1,
+  .group-2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex: 1;
+  }
+  
+  .item-1,
+  .item-2,
+  .item-3,
+  .item-4{
+    width: 50%;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
 }
