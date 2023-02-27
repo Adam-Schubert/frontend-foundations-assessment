@@ -195,6 +195,7 @@ footer p {
 
   .desktop-about p {
     flex: 2;
+    margin-top: 60px;
   }
 
   h2{
